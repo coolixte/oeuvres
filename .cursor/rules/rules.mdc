@@ -1,0 +1,25 @@
+---
+description: For the whole project.
+globs: *.html, *.js, *.css
+---
+
+# PROJECT RULES
+
+I'm creating a website with HTML, CSS and JS.
+The name is "UNE OEUVRE ✦ UN PRIX"  and the project is composed of:
+- A homepage: @index.html 
+- @oeuvres.html the page with the minigame.
+- @apprendre.html a page with information about artworks and their sell price.
+
+The minigame is the following: an artwork from @oeuvres is chosen at random, and is shown to the user, along with the author of the painting. The user then needs to try to guess the sell price of the artwork. The website than shows the real price and tells the user how close he was. All artwork info (price, author) is kept in @script.js 
+
+The project is in french, though our discussions will be in english.
+
+The website should be responsive and work on all devices.
+
+The design should be simple and clean, and the user experience should be as smooth as possible.
+
+Always add text in black.
+
+When modifing an element of the title (top two icons, horizontal line) change the elements for @index.html, @oeuvres.html and @apprendre.html, so that the title is consistent across the website.
+
