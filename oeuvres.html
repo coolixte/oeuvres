@@ -1,0 +1,112 @@
+<!--
+ * Fichier: oeuvres.html
+ * 
+ * Description:
+ * Page principale du jeu UNE ŒUVRE · UN PRIX. Affiche une œuvre d'art aléatoire
+ * et permet à l'utilisateur d'estimer son prix de vente.
+ * 
+ * Fonctionnalités:
+ * - Affichage aléatoire d'œuvres d'art depuis la base de données
+ * - Interface de devinette du prix par l'utilisateur
+ * - Comparaison entre le prix estimé et le prix réel
+ * - Contrôle dynamique de la taille de l'image
+ * - Gestion des œuvres déjà vues
+ * 
+ * Dépendances:
+ * - style.css: pour les styles visuels
+ * - script.js: pour la base de données des œuvres et la gestion des utilisateurs
+ * - game.js: pour la logique principale du jeu
+ * - height-control.js: pour le contrôle de la taille de l'image
+ -->
+
+ 
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>UNE ŒUVRE · UN PRIX</title>
+		<!-- Feuilles de style et favicon -->
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" href="star-favicon.png" type="image/png">
+	</head>
+	<body>
+		<!-- En-tête du site avec navigation -->
+		<header class="site-header">
+			<div id="user-display" class="user-pill" style="display: none">
+				<span id="user-name"></span>
+			</div>
+			<nav class="nav-pills">
+				<a href="oeuvres.html" class="nav-pill">JOUER AU JEU</a>
+				<span class="nav-separator">✦</span>
+				<a href="apprendre.html" class="nav-pill">EN APPRENDRE PLUS</a>
+				<span class="nav-separator">✦</span>
+				<a href="contact.html" class="nav-pill">CONTACT</a>
+			</nav>
+			<a href="index.html" class="home-button" aria-label="Home">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/>
+				</svg>
+			</a>
+			<button id="color-change-btn" class="color-change-button" aria-label="Change Background Color">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="currentColor"/>
+				</svg>
+			</button>
+			<button id="sign-in-btn" class="sign-in-button" aria-label="Se connecter">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="currentColor"/>
+				</svg>
+			</button>
+		</header>
+		<main>
+			<!-- Titre principal avec lien vers la page d'accueil -->
+			<h1><a href="index.html">UNE ŒUVRE · UN PRIX</a></h1>
+
+			<!-- Widget d'informations sur l'œuvre -->
+			<section class="artwork-info">
+				<div id="artwork-details">
+					✦ <span id="artwork-author"></span> · « <span id="artwork-title"></span> » · <span id="artwork-date"></span> ✦
+				</div>
+				<div id="price-reveal" style="display: none">
+				</div>
+			</section>
+
+			<!-- Affichage de l'œuvre -->
+			<div class="artwork-display">
+				<img id="artwork-image" alt="Œuvre d'art">
+			</div>
+
+			<!-- Bouton de devinette -->
+			<button id="guess-button" class="cta-button">DEVINER LE PRIX!</button>
+
+			<!-- Dialogue de devinette -->
+			<div class="dialog-overlay" id="guessOverlay" style="display: none"></div>
+			<div class="guess-dialog" id="guessDialog" style="display: none">
+				<h3>Estimez le prix ✦</h3>
+				<input type="number" id="priceGuess" class="price-input" placeholder="Votre estimation en €">
+				<div>
+					<button class="dialog-button" id="submitGuess">Confirmer</button>
+					<button class="dialog-button" id="cancelGuess">Annuler</button>
+				</div>
+			</div>
+		</main>
+		<!-- Pied de page et indicateur de défilement -->
+		<div class="footer-text">2025 · @Calixte Lamotte</div>
+		<div id="scroll-indicator" class="scroll-indicator">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div>
+
+		<!-- Contrôle de hauteur d'image -->
+		<div class="height-control">
+			<input type="range" id="height-slider" min="200" max="650" value="450">
+		</div>
+
+		<!-- Importation des scripts JavaScript -->
+		<script src="script.js"></script>
+		<script src="game.js"></script>
+		<script src="height-control.js"></script>
+	</body>
+</html>

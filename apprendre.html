@@ -1,0 +1,109 @@
+<!--
+ * Fichier: apprendre.html
+ * 
+ * Description:
+ * Page des ressources éducatives permettant aux utilisateurs d'apprendre à estimer l'art.
+ * Cette page fournit des liens vers des ressources externes concernant l'estimation 
+ * des œuvres d'art, la cote des artistes et les conseils d'experts.
+ * 
+ * Fonctionnalités:
+ * - Affiche des liens vers des ressources éducatives externes
+ * - Inclut une image décorative
+ * - Partage l'en-tête et le pied de page communs du site
+ * 
+ * Dépendances:
+ * - style.css: pour les styles visuels
+ * - script.js: pour la gestion des utilisateurs et le thème de couleur
+ * - scroll.js: pour l'indicateur de défilement
+ -->
+
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>UNE ŒUVRE · UN PRIX</title>
+		<!-- Feuilles de style et favicon -->
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" href="star-favicon.png" type="image/png">
+	</head>
+	<body>
+		<!-- En-tête du site avec navigation -->
+		<header class="site-header">
+			<div id="user-display" class="user-pill" style="display: none">
+				<span id="user-name"></span>
+			</div>
+			<nav class="nav-pills">
+				<a href="oeuvres.html" class="nav-pill">JOUER AU JEU</a>
+				<span class="nav-separator">✦</span>
+				<a href="apprendre.html" class="nav-pill">EN APPRENDRE PLUS</a>
+				<span class="nav-separator">✦</span>
+				<a href="contact.html" class="nav-pill">CONTACT</a>
+			</nav>
+			<a href="index.html" class="home-button" aria-label="Home">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/>
+				</svg>
+			</a>
+			<button id="color-change-btn" class="color-change-button" aria-label="Change Background Color">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="currentColor"/>
+				</svg>
+			</button>
+			<button id="sign-in-btn" class="sign-in-button" aria-label="Se connecter">
+				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="currentColor"/>
+				</svg>
+			</button>
+		</header>
+		
+		<main>
+			<!-- Titre principal avec lien vers la page d'accueil -->
+			<h1><a href="index.html">UNE ŒUVRE · UN PRIX</a></h1>
+			
+			<!-- Section titre -->
+			<section class="artwork-info">
+				<div id="artwork-details">✦ APPRENDRE À ESTIMER L'ART ✦</div>
+			</section>
+
+			<!-- Liens vers des ressources éducatives -->
+			<section class="learn-resources">
+				<div class="resource-buttons">
+					<a href="https://www.iesa.fr/ressources/definition-connaitre-la-cote-artiste" 
+					   target="_blank" 
+					   class="white-cta-button">
+						La cote d'un artiste ↗
+					</a>
+					<a href="https://arts20.com/apprenez-a-definir-la-valeur-dune-toile/" 
+					   target="_blank" 
+					   class="white-cta-button">
+						Définir la valeur d'une toile ↗
+					</a>
+					<a href="https://www.skillshare.com/fr/blog/conseils-dexperts-comment-fixer-le-prix-de-vos-oeuvres-dart/" 
+					   target="_blank" 
+					   class="white-cta-button">
+						Conseils d'experts ↗
+					</a>
+				</div>
+			</section>
+
+			<!-- Image décorative en bas -->
+			<div class="bottom-image-container" style="cursor: default">
+				<img src="oeuvres/blue-yellow-country.jpg" alt="Blue and Yellow Country" class="bottom-image zoomed-image">
+			</div>
+		</main>
+		
+		<!-- Pied de page et indicateur de défilement -->
+		<div class="footer-text">2025 · @Calixte Lamotte</div>
+		<div id="scroll-indicator" class="scroll-indicator">
+			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			</svg>
+		</div>
+		
+		<!-- Importation des scripts JavaScript -->
+		<script src="script.js"></script>
+		<script src="scroll.js"></script>
+	</body>
+</html>

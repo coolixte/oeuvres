@@ -1,0 +1,116 @@
+<!--
+ * Fichier: contact.html
+ * 
+ * Description:
+ * Page de contact du site UNE ŒUVRE · UN PRIX, permettant aux utilisateurs
+ * d'envoyer des messages, questions ou suggestions via un formulaire.
+ * 
+ * Fonctionnalités:
+ * - Formulaire de contact avec validation
+ * - Traitement du formulaire via Formspree (service externe)
+ * - Réinitialisation des champs après soumission
+ * - Image décorative
+ * 
+ * Dépendances:
+ * - style.css: pour les styles visuels
+ * - script.js: pour la gestion des utilisateurs et le thème de couleur
+ * - scroll.js: pour l'indicateur de défilement
+ * - contact.js: pour le traitement du formulaire de contact
+ -->
+
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>UNE ŒUVRE · UN PRIX</title>
+        <!-- Feuilles de style et favicon -->
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="star-favicon.png" type="image/png">
+    </head>
+    <body>
+        <!-- En-tête du site avec navigation -->
+        <header class="site-header">
+            <div id="user-display" class="user-pill" style="display: none">
+                <span id="user-name"></span>
+            </div>
+            <nav class="nav-pills">
+                <a href="oeuvres.html" class="nav-pill">JOUER AU JEU</a>
+                <span class="nav-separator">✦</span>
+                <a href="apprendre.html" class="nav-pill">EN APPRENDRE PLUS</a>
+                <span class="nav-separator">✦</span>
+                <a href="contact.html" class="nav-pill">CONTACT</a>
+            </nav>
+            <a href="index.html" class="home-button" aria-label="Home">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/>
+                </svg>
+            </a>
+            <button id="color-change-btn" class="color-change-button" aria-label="Change Background Color">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" fill="currentColor"/>
+                </svg>
+            </button>
+            <button id="sign-in-btn" class="sign-in-button" aria-label="Se connecter">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="currentColor"/>
+                </svg>
+            </button>
+        </header>
+        <main>
+            <!-- Titre principal avec lien vers la page d'accueil -->
+            <h1><a href="index.html">UNE ŒUVRE · UN PRIX</a></h1>
+
+            <!-- Section titre -->
+            <section class="artwork-info">
+				<div id="artwork-details">✦ CONTACTEZ-NOUS ✦</div>
+			</section>
+
+            <!-- Image décorative -->
+            <div class="bottom-image-container" style="cursor: default">
+                <img src="oeuvres/blue-and-yellow-eights.jpg" alt="Blue and Yellow Eights" class="bottom-image zoomed-image">
+            </div>
+
+            <!-- Section de contact avec formulaire -->
+            <section class="contact-section">
+                <h2>CONTACTEZ-NOUS ✦</h2>
+                <p>
+                    Vous avez des questions sur le jeu ? Des suggestions d'amélioration ? 
+                    Ou simplement envie de partager votre passion pour l'art ? 
+                    N'hésitez pas à nous contacter via le formulaire ci-dessous.
+                </p>
+                
+                <!-- Formulaire de contact utilisant Formspree -->
+                <form class="contact-form" action="https://formspree.io/f/xanqdoka" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" required placeholder="Votre nom">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required placeholder="Votre message"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">ENVOYER</button>
+                </form>
+            </section>
+        </main>
+        <!-- Pied de page et indicateur de défilement -->
+        <div class="footer-text">2025 · @Calixte Lamotte</div>
+        <div id="scroll-indicator" class="scroll-indicator">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 10l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <!-- Importation des scripts JavaScript -->
+        <script src="script.js"></script>
+        <script src="scroll.js"></script>
+        <script src="contact.js"></script>
+    </body>
+</html>
